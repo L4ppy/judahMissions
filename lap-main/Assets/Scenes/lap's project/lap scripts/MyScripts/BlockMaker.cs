@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockMaker : MonoBehaviour
 
@@ -8,7 +9,7 @@ public class BlockMaker : MonoBehaviour
     public GameObject block;
     private int blockWidth = 2;
     private int blockHeight = 1;
-    var blockwin = GameObject.FindGameObjectWithTag("greenBlock")
+    
     List<GameObject> blockList = new List<GameObject>();
     // Start is called before the first frame update
     void Start() {
@@ -51,9 +52,10 @@ public class BlockMaker : MonoBehaviour
     {
         for (int i = 0; i < blockList ; i++)
         {
+            var blockwin = GameObject.FindGameObjectWithTag("greenBlock");
             if (GameObject.FindGameObjectsWithTag("greenBlock").Length = blockList.Count)
             {
-                
+                SceneManager.LoadScene("win");
             }
             else if (GameObject.FindGameObjectsWithTag("greenBlock").Length < blockList.Count )
             {
